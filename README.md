@@ -99,34 +99,6 @@ AltoShift/
     └── i18n.py               # سیستم ترجمه‌ی رابط کاربری (فارسی/انگلیسی)
 ```
 
-### 🛠️ اجرا و ساخت
-
-**اجرا از روی سورس (برای توسعه):**
-
-نیازمندی‌ها: ویندوز ۱۰/۱۱، پایتون ۳.۱۰ یا بالاتر.
-
-```powershell
-git clone <repo-url>
-cd AltoShift
-py -m pip install -r requirements.txt
-py main.py
-```
-
-> فونت‌های Sahel را از [مخزن رسمی](https://github.com/rastikerdar/sahel-font/releases) دانلود کنید و فایل‌های `Sahel-Light.ttf` و `Sahel-Black.ttf` را داخل پوشه‌ی `fonts/` قرار دهید. اگر نباشند، برنامه با فونت پیش‌فرض ویندوز بدون کرش ادامه می‌دهد.
-
-**ساخت فایل exe:**
-
-```powershell
-py -m pip install pyinstaller
-py -m PyInstaller --noconfirm --windowed --name "AltoShift" --icon "assets\icon.ico" --add-data "fonts;fonts" --add-data "assets;assets" --hidden-import "win32timezone" --hidden-import "win32com.client" main.py
-```
-
-خروجی: `dist\AltoShift\AltoShift.exe`
-
-**ساخت Installer (اختیاری، با Inno Setup):**
-
-[Inno Setup](https://jrsoftware.org/isdl.php) را نصب کنید، یک فایل `installer.iss` با تنظیمات `AppName=AltoShift` و `SetupIconFile=assets\icon.ico` بسازید و با `Ctrl+F9` کامپایل کنید. خروجی نهایی: `installer_output\AltoShift-Setup.exe`
-
 ### ⚙️ نکات فنی مهم
 
 - برنامه‌هایی که با دسترسی **Administrator** اجرا می‌شوند (مثل Task Manager) فقط وقتی قابل‌کنترل‌اند که خود AltoShift هم با دسترسی Administrator اجرا شود.
@@ -227,34 +199,6 @@ AltoShift/
     ├── styles.py             # Dark/light QSS styles
     └── i18n.py               # UI translation system (Persian/English)
 ```
-
-### 🛠️ Run & build
-
-**Run from source (for development):**
-
-Requirements: Windows 10/11, Python 3.10 or newer.
-
-```powershell
-git clone <repo-url>
-cd AltoShift
-py -m pip install -r requirements.txt
-py main.py
-```
-
-> Download the Sahel fonts from the [official repository](https://github.com/rastikerdar/sahel-font/releases) and place `Sahel-Light.ttf` and `Sahel-Black.ttf` inside the `fonts/` folder. If they are missing, the app continues with the system default font without crashing.
-
-**Build the executable:**
-
-```powershell
-py -m pip install pyinstaller
-py -m PyInstaller --noconfirm --windowed --name "AltoShift" --icon "assets\icon.ico" --add-data "fonts;fonts" --add-data "assets;assets" --hidden-import "win32timezone" --hidden-import "win32com.client" main.py
-```
-
-Output: `dist\AltoShift\AltoShift.exe`
-
-**Build the installer (optional, with Inno Setup):**
-
-Install [Inno Setup](https://jrsoftware.org/isdl.php), create an `installer.iss` file with `AppName=AltoShift` and `SetupIconFile=assets\icon.ico`, then compile with `Ctrl+F9`. Final output: `installer_output\AltoShift-Setup.exe`
 
 ### ⚙️ Important technical notes
 
